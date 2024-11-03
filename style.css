@@ -1,0 +1,66 @@
+body { 
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  #controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000;
+  }
+  #time-log {
+    position: absolute;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    bottom: 10px;
+    right: 10px;
+  }
+  input {
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+  button {
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 3px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  #tracked-satellites {
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  .satellite-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    gap: 5px;
+  }
+  .remove-btn {
+    background-color: #f44336;
+    padding: 2px 6px;
+    font-size: 12px;
+  }
+  .remove-btn:hover {
+    background-color: #da190b;
+  }
+  .error-message {
+    color: #ff6b6b;
+    font-size: 12px;
+    margin-top: 5px;
+  }

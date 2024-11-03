@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Satellite Tracker Search</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="//unpkg.com/satellite.js/dist/satellite.min.js"></script>
+  <script src="//unpkg.com/globe.gl"></script>
+</head>
+<body>
+  <div id="controls">
+    <h3 style="margin-top: 0;">Satellite Tracker</h3>
+    <div>
+      <input type="text" id="satellite-id" placeholder="Enter Satellite ID (NORAD ID)">
+      <button id="add-satellite">Track Satellite</button>
+    </div>
+    <div id="error-display" class="error-message"></div>
+    <div>
+      <a href="https://db.satnogs.org/satellites/" target="_blank" style="color: #00ff00; text-decoration: none;">
+        📡 View List of Satellite IDs
+      </a>
+    </div>
+    <div id="tracked-satellites">
+      <h4 style="margin-bottom: 5px;">Currently Tracking:</h4>
+    </div>
+  </div>
+  <div id="chart"></div>
+  <div id="time-log"></div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
