@@ -1,5 +1,5 @@
 # satelite-tracker
-Input Satellites NORAD ID, get a live view of it with a prediction!
+Input Satellites NORAD ID, get a live view of it with a prediction! Try it now: https://satelite-tracker.vercel.app/
 ___
 ## Setup Instructions
 
