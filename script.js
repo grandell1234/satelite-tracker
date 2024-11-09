@@ -13,6 +13,7 @@ const errorDisplay = document.getElementById("error-display");
 
 const activeSatellites = new Map();
 
+// Creates World
 const world = Globe()(document.getElementById("chart"))
   .globeImageUrl("//unpkg.com/three-globe/example/img/earth-blue-marble.jpg")
   .objectLat("lat")
@@ -37,6 +38,7 @@ const satMaterial = new THREE.MeshLambertMaterial({
 
 world.objectThreeObject(() => new THREE.Mesh(satGeometry, satMaterial));
 
+// Calls API
 async function fetchSatelliteTLE(satelliteId) {
   try {
     const response = await fetch(
@@ -60,6 +62,7 @@ async function fetchSatelliteTLE(satelliteId) {
   }
 }
 
+// Predicts where the satelite is going to go.
 function calculateSatellitePosition(tleData, time) {
   const satrec = satellite.twoline2satrec(tleData.tle1, tleData.tle2);
   const positionAndVelocity = satellite.propagate(satrec, time);
@@ -81,6 +84,7 @@ function calculateSatellitePosition(tleData, time) {
   };
 }
 
+// Adds satelite address that is called to the tracking list (so you can remove it)
 function addSatelliteToTrackingList(satData) {
   const listItem = document.createElement("div");
   listItem.className = "satellite-item";
@@ -98,6 +102,7 @@ function addSatelliteToTrackingList(satData) {
   trackedList.appendChild(listItem);
 }
 
+// Gets satelite location from public API
 async function addSatellite(satelliteId) {
   try {
     errorDisplay.textContent = "Fetching satellite data...";
@@ -133,6 +138,7 @@ satelliteInput.addEventListener("keypress", (e) => {
   }
 });
 
+// Updates with prediction
 let time = new Date();
 (function frameTicker() {
   requestAnimationFrame(frameTicker);
@@ -146,4 +152,5 @@ let time = new Date();
   world.objectsData(satPositions);
 })();
 
+// Imports ISS (international space station)
 addSatellite("25544");
